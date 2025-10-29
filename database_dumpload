@@ -1,0 +1,23 @@
+------------------------
+database dumping part
+--------------------------
+mkdir  /root/data
+
+mysqldump -u root  --no-data=TRUE --routines=TRUE --events=TRUE --triggers=FALSE database_name > /root/data/mdexport-schema-no-triggers.sql
+
+mysqldump -u root  --no-data=TRUE --no-create-info=TRUE --triggers=TRUE database_name > /root/data/mdexport-schema-only-trigger.sql
+
+mydumper  -u root --database database_name  --threads=10 --rows=1000 --complete-insert --no-schemas --skip-tz-utc --compress --long-query-guard=20 --outputdir /root/data/export-data 
+
+-----------------------
+database loading part
+--------------------------
+
+import schema 
+mysql -u root -pITPezybillidukki@123 idukki_v2 < /root/data/mdexport-schema-no-triggers.sql
+
+restore data using  myloader :
+myloader -u root -p 'ITPezybillidukki@123'  --threads=4 --database  idukki_v2 --directory /root/data/export-data
+
+import triggers, procedures, events ,tables :
+mysql -u root -p'ITPezybillidukki@123' idukki_v2 < /root/data/mdexport-schema-only-trigger.sql

@@ -1,0 +1,440 @@
+#1. File and Directory Management
+#1.1 Basic Operations
+
+ls          # List directory contents with various options
+cd          # Change directories
+pwd         # Print working directory
+mkdir       # Create directories
+rmdir       # Remove empty directories
+rm          # Delete files and directories
+cp          # Copy files and directories
+mv          # Move or rename files
+touch       # Create empty files or update timestamps
+ln          # Create hard and symbolic links
+
+#1.2 Advanced File Operations
+
+find        # Search for files in directory hierarchies
+locate      # Find files by name quickly
+which       # Show full path of commands
+whereis     # Locate binary, source, and manual pages
+file        # Determine file type
+stat        # Display file or filesystem status
+tree        # Display directory structure in tree format
+basename    # Strip directory and suffix from filenames
+dirname     # Strip last component from file path
+realpath    # Print resolved absolute path
+readlink    # Print resolved symbolic links
+pathchk     # Check pathname validity
+mktemp      # Create temporary file or directory
+
+#1.3 File Viewing and Editing
+
+cat         # Display file contents
+less        # View file contents page by page
+more        # Simple file viewer
+head        # Display first lines of files
+tail        # Display last lines of files
+nano        # Simple text editor
+vim         # Advanced text editor
+vi          # Classic text editor
+emacs       # Extensible text editor
+sed         # Stream editor for text manipulation
+tac         # Display file in reverse
+rev         # Reverse lines characterwise
+nl          # Number lines of files
+
+###########2. Text Processing and Manipulation
+#2.1 Text Search and Pattern Matching
+
+grep        # Search text using patterns
+egrep       # Extended grep with regex support
+fgrep       # Fast grep for fixed strings
+awk         # Pattern scanning and processing language
+sed         # Stream editor for filtering and transforming text
+look        # Display lines beginning with string
+
+#2.2 Text Transformation
+
+cut         # Remove sections from lines
+paste       # Merge lines of files
+join        # Join lines based on common fields
+sort        # Sort lines of text
+uniq        # Report or omit repeated lines
+wc          # Count words, lines, and characters
+tr          # Translate or delete characters
+expand      # Convert tabs to spaces
+unexpand    # Convert spaces to tabs
+fold        # Wrap text to specified width
+fmt         # Simple text formatter
+pr          # Convert text files for printing
+column      # Columnate lists
+
+#2.3 File Comparison
+
+diff        # Compare files line by line
+comm        # Compare sorted files
+cmp         # Compare two files byte by byte
+patch       # Apply diff files to originals
+sdiff       # Side-by-side merge of file differences
+vimdiff     # Edit two, three or four versions of a file with Vim
+
+#2.4 Binary and Encoding Tools
+
+strings     # Print printable strings from files
+od          # Dump files in octal format
+hexdump     # Display file contents in hexadecimal
+xxd         # Make hexdump or reverse
+iconv       # Convert text encoding
+base64      # Base64 encode/decode data
+
+#3. System Information and Monitoring
+#3.1 System Details
+
+uname       # Print system information
+hostname    # Show or set system hostname
+hostnamectl # Control system hostname
+uptime      # Show system uptime and load
+date        # Display or set system date and time
+timedatectl # Control system time and date
+cal         # Display calendar
+whoami      # Print current username
+who         # Show who is logged in
+w           # Show who is logged in and what they're doing
+last        # Show login history
+lastb       # Show bad login attempts
+lastlog     # Display recent login information
+id          # Print user and group information
+logname     # Print user's login name
+users       # Print usernames of logged in users
+finger      # User information lookup
+pinky       # Lightweight finger
+arch        # Print machine architecture
+
+#3.2 Process Management
+
+ps          # Report process status
+top         # Display dynamic process information
+htop        # Interactive process viewer
+pstree      # Display process tree
+pgrep       # Find processes by name
+pidof       # Find process ID by name
+kill        # Send signals to processes
+killall     # Kill processes by name
+pkill       # Signal processes by name
+nice        # Run program with modified priority
+renice      # Alter priority of running processes
+nohup       # Run command immune to hangups
+bg          # Put jobs in background
+fg          # Bring jobs to foreground
+jobs        # List active jobs
+wait        # Wait for process completion
+timeout     # Run command with time limit
+watch       # Execute program periodically
+screen      # Screen manager with terminal emulation
+tmux        # Terminal multiplexer
+disown      # Remove jobs from shell's job table
+xargs       # Build and execute command lines from input
+parallel    # Execute jobs in parallel
+
+#3.3 Resource Monitoring
+
+free        # Display memory usage
+vmstat      # Report virtual memory statistics
+iostat      # Report CPU and I/O statistics
+mpstat      # Report processor statistics
+sar         # Collect and report system activity
+dstat       # Versatile resource statistics tool
+atop        # Advanced system monitor
+iotop       # Display I/O usage by processes
+iftop       # Display bandwidth usage
+nethogs     # Monitor network bandwidth per process
+nmon        # Performance monitoring tool
+glances     # Cross-platform monitoring tool
+sysstat     # System performance tools
+collectl    # Performance monitoring tool
+pidstat     # Report statistics for tasks
+
+#4. Disk and Filesystem Management
+#4.1 Disk Information
+
+df          # Report filesystem disk space usage
+du          # Estimate file space usage
+lsblk       # List block devices
+blkid       # Locate block device attributes
+fdisk       # Partition table manipulator
+parted      # Partition manipulation program
+gdisk       # GPT partition editor
+cfdisk      # Curses-based disk partition editor
+sfdisk      # Scriptable partition table manipulator
+partprobe   # Inform OS of partition table changes
+blockdev    # Call block device ioctls
+
+#4.2 Mounting and Filesystems
+mount       # Mount filesystems
+umount      # Unmount filesystems
+findmnt     # Find mounted filesystems
+mkfs        # Build Linux filesystem
+mkfs.ext4   # Create ext4 filesystem
+mkfs.xfs    # Create XFS filesystem
+mkfs.btrfs  # Create Btrfs filesystem
+mkfs.vfat   # Create FAT filesystem
+fsck        # Check and repair filesystem
+e2fsck      # Check ext2/ext3/ext4 filesystem
+tune2fs     # Adjust ext filesystem parameters
+resize2fs   # Resize ext filesystems
+xfs_repair  # Repair XFS filesystem
+xfs_growfs  # Expand XFS filesystem
+btrfs       # Control Btrfs filesystem
+debugfs     # Debug ext2/ext3/ext4 filesystem
+dumpe2fs    # Dump ext filesystem information
+
+#4.3 LVM (Logical Volume Manager)
+
+pvcreate    # Initialize physical volume for LVM
+pvdisplay   # Display physical volume information
+pvremove    # Remove physical volume
+pvscan      # Scan for physical volumes
+pvs         # Display physical volume information
+vgcreate    # Create volume group
+vgdisplay   # Display volume group information
+vgextend    # Extend volume group
+vgreduce    # Reduce volume group
+vgremove    # Remove volume group
+vgs         # Display volume group information
+lvcreate    # Create logical volume
+lvdisplay   # Display logical volume information
+lvextend    # Extend logical volume
+lvreduce    # Reduce logical volume
+lvremove    # Remove logical volume
+lvscan      # Scan for logical volumes
+lvs         # Display logical volume information
+
+#4.4 RAID Management
+
+mdadm       # Manage MD devices (software RAID)
+mdmon       # Monitor MD external metadata arrays
+
+#4.5 Swap Management
+
+mkswap      # Set up Linux swap area
+swapon      # Enable swap
+swapoff     # Disable swap
+
+#5. Networking Commands
+#5.1 Network Configuration
+
+ifconfig    # Configure network interfaces
+ip          # Show/manipulate routing and devices
+nmcli       # NetworkManager command-line tool
+nmtui       # NetworkManager text user interface
+route       # Show/manipulate IP routing table
+iwconfig    # Configure wireless network interface
+ethtool     # Query or control network driver settings
+ifup        # Bring network interface up
+ifdown      # Take network interface down
+dhclient    # Dynamic Host Configuration Protocol client
+ifstat      # Report interface statistics
+mii-tool    # View/manipulate media-independent interface status
+
+#5.2 Network Testing
+
+ping        # Send ICMP echo requests
+ping6       # Ping for IPv6
+traceroute  # Trace packet route to host
+tracepath   # Trace path to network host
+mtr         # Network diagnostic tool combining ping and traceroute
+nslookup    # Query DNS servers
+dig         # DNS lookup utility
+host        # DNS lookup utility
+whois       # Query domain registration information
+arping      # Send ARP requests
+hping3      # Network tool for crafting packets
+fping       # Send ICMP echo probes to network hosts
+
+#5.3 Network Connections
+
+netstat     # Network statistics
+ss          # Socket statistics
+lsof        # List open files including network connections
+fuser       # Identify processes using files or sockets
+nc          # Netcat for network connections
+telnet      # User interface to TELNET protocol
+nmap        # Network exploration and security scanner
+tcpdump     # Dump network traffic
+wireshark   # Network protocol analyzer
+tshark      # Terminal-based Wireshark
+arp         # Manipulate ARP cache
+iptraf      # Interactive IP LAN monitor
+vnstat      # Network traffic monitor
+bmon        # Bandwidth monitor
+netcat      # TCP/IP swiss army knife
+socat       # Multipurpose relay
+
+#5.4 File Transfer
+
+wget        # Download files from web
+curl        # Transfer data with URLs
+scp         # Secure copy over SSH
+rsync       # Remote file synchronization
+sftp        # Secure file transfer protocol
+ftp         # File transfer protocol client
+lftp        # Sophisticated file transfer program
+rcp         # Remote file copy
+rsh         # Remote shell
+aria2c      # Download utility supporting multiple protocols
+
+#6. User and Permission Management
+#6.1 User Management
+
+useradd     # Create new user
+adduser     # Interactive user creation
+usermod     # Modify user account
+userdel     # Delete user account
+deluser     # Remove user
+passwd      # Change user password
+chage       # Change user password expiry
+chpasswd    # Update passwords in batch
+newusers    # Update and create new users in batch
+vipw        # Edit password file
+vigr        # Edit group file
+pwck        # Verify password file integrity
+grpck       # Verify group file integrity
+getent      # Get entries from administrative database
+
+#6.2 Group Management
+
+groupadd    # Create new group
+groupmod    # Modify group
+groupdel    # Delete group
+groups      # Show group memberships
+newgrp      # Log in to new group
+gpasswd     # Administer /etc/group and /etc/gshadow
+sg          # Execute command as different group ID
+
+#6.3 Permissions
+
+chmod       # Change file permissions
+chown       # Change file owner
+chgrp       # Change group ownership
+umask       # Set default file permissions
+setfacl     # Set file access control lists
+getfacl     # Get file access control lists
+chattr      # Change file attributes
+lsattr      # List file attributes
+
+#6.4 Privilege Escalation
+
+sudo        # Execute command as another user
+su          # Switch user
+visudo      # Edit sudoers file safely
+sudoedit    # Edit files as another user
+sudoreplay  # Replay sudo session logs
+
+#7. Package Management
+#7.1 Debian/Ubuntu (APT)
+
+apt         # Package management tool
+apt-get     # APT package handling utility
+apt-cache   # Query APT cache
+aptitude    # High-level package manager
+dpkg        # Debian package manager
+dpkg-query  # Query dpkg database
+dpkg-reconfigure  # Reconfigure installed package
+apt-file    # Search files in packages
+apt-mark    # Mark/unmark packages
+apt-key     # Manage APT keys
+add-apt-repository  # Add entries to apt sources.list
+
+#7.2 Red Hat/CentOS/Fedora
+
+yum         # Package manager
+dnf         # Next-generation package manager
+rpm         # RPM package manager
+yumdownloader  # Download RPM packages
+rpm2cpio    # Convert RPM to cpio archive
+rpmquery    # Query RPM database
+yum-config-manager  # Manage yum configuration
+
+#7.5 Universal Package Managers
+snap        # Snap package manager
+flatpak     # Flatpak package manager
+
+#8. Archive and Compression
+#8.1 Tar Archives
+tar         # Archive utility
+gzip        # Compress files
+gunzip      # Decompress gzip files
+bzip2       # Compress with bzip2
+bunzip2     # Decompress bzip2 files
+xz          # Compress with xz
+unxz        # Decompress xz files
+lzma        # Compress with LZMA
+unlzma      # Decompress LZMA files
+pigz        # Parallel gzip
+pbzip2      # Parallel bzip2
+
+#8.2 Zip Archives
+
+zip         # Package and compress files
+unzip       # Extract zip archives
+7z          # 7-Zip compression utility
+rar         # RAR compression utility
+unrar       # Extract RAR archives
+
+#8.3 Other Compression Tools
+
+compress    # Compress files
+uncompress  # Decompress files
+zcat        # View compressed files
+zless       # View compressed files with less
+zmore       # View compressed files with more
+zgrep       # Search compressed files
+zdiff       # Compare compressed files
+bzcat       # View bzip2 compressed files
+bzgrep      # Search bzip2 compressed files
+xzcat       # View xz compressed files
+lzcat       # View lzma compressed files
+lzop        # Fast compression utility
+
+#8.4 Archive Tools
+
+cpio        # Copy files to and from archives
+ar          # Create, modify, and extract from archives
+
+#9. Remote Access and Security
+#9.1 SSH
+
+ssh         # Secure shell client
+ssh-keygen  # Generate SSH keys
+ssh-copy-id # Copy SSH keys to remote host
+ssh-agent   # SSH authentication agent
+ssh-add     # Add keys to SSH agent
+sshd        # SSH daemon
+sshfs       # Mount remote filesystem over SSH
+ssh-keyscan # Gather SSH public keys
+autossh     # Automatically restart SSH sessions
+scp         # Secure copy (already listed in File Transfer)
+sftp        # SSH File Transfer Protocol (already listed)
+
+#9.2 Firewall
+
+iptables    # IPv4 firewall administration
+ip6tables   # IPv6 firewall administration
+ufw         # Uncomplicated firewall
+firewalld   # Dynamic firewall manager
+firewall-cmd # Firewalld command-line client
+nftables    # Next-generation firewall
+iptables-save    # Save iptables rules
+iptables-restore # Restore iptables rules
+
+#9.3 Security Tools
+
+gpg         # GNU Privacy Guard encryption
+openssl     # OpenSSL command-line tool
+fail2ban    # Ban IPs that show malicious signs
+selinux     # SELinux security framework
+apparmor    # AppArmor security module
+auditctl    # Control kernel audit system
+ausearch    # Search audit logs
+aureport    #

@@ -1,0 +1,9 @@
+#!/bin/sh
+# MySQL Backup Script for All Databases
+HOST=localhost
+BACKUPFILE=/root/mysql_dump$(date +'%d%m%Y')
+USER=root
+DUMP_ARGS="--opt --flush-logs --quote-names"
+DATABASES="--all-databases"
+/usr/bin/mysqldump --host=localhost --user=$USER --all-databases --result-file=$BACKUPFILE
+

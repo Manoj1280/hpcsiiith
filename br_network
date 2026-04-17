@@ -1,0 +1,23 @@
+network:
+  version: 2
+  renderer: networkd
+
+  ethernets:
+    enp1s0f0np0:
+      dhcp4: no
+
+  bridges:
+    br0:
+      interfaces: [enp1s0f0np0]
+      addresses:
+        - 10.4.25.57/20
+      routes:
+        - to: default
+          via: 10.4.20.1
+      nameservers:
+        addresses:
+          - 10.4.20.21
+      parameters:
+        stp: false
+        forward-delay: 0
+

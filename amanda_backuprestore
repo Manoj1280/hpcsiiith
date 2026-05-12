@@ -1,0 +1,72 @@
+--------------------------------------------------
+AMANDA Dump Pre-Checkups 
+----------------------------------------------------
+
+1) lsscsi -g need to verify physical tape disk is read by server or not
+
+2) mtx -f /dev/sch0 status verify tape disk it should be in drive state only.
+
+3) Load the tapes for backup purpose
+mtx -f /dev/sch0 load 1 0
+mtx -f /dev/sch0 load 2 1
+
+4) Verify configurations for Amanda with
+amcheck DailySet1
+
+5) Need to add gnuter dump type for all permissions, previlages and symbolic link
+# Dumptypes for gnutar
+define dumptype root-tar {
+global
+program "GNUTAR"
+comment "root partitions dumped with tar"
+compress none
+index  yes
+# Add these two lines below:
+holdingdisk no
+estimate calcsize
+priority low
+}
+
+6) Need to update the disk list with as below.
+localhost /staging/ada_home root-tar
+
+
+7) Need to label both slots before dumping
+amlabel -f DailySet1 TAPE-ADAUSERBACKUP-01 slot 1
+amlabel -f DailySet1 TAPE-ADAUSERBACKUP-02 slot 2
+
+8) Need to run Dump command as 
+amdump DailySet1
+
+9) For dump monitering purpose we need to use
+watch -n 1 amstatus DailySet1
+
+------------------------------------------
+Physical Tape disk eject steps
+------------------------------------------
+
+Need to unload and tape first for both slot 1 and slot 2
+mtx -f /dev/sch0 unload 1 0
+mtx -f /dev/sch0 unload 2 1
+
+Need to transfer the tape disks from drive slot to mail slot
+mtx -f /dev/sch0 transfer 1 36
+mtx -f /dev/sch0 transfer 2 37
+
+Verify tape disk is in mail slot with below command
+mtx -f /dev/sch0 status
+------------------------------------------------------
+Physical Tape Disk data restoration steps
+------------------------------------------------------
+
+Need to move the tapes from mail slot to drive slot
+
+mtx -f /dev/sch0 transfer 36 1
+mtx -f /dev/sch0 transfer 37 2
+
+Verify tape disk in drive slot with below command
+mtx -f /dev/sch0 status
+
+run the restoration command
+
+amrestore -p /dev/nst0 localhost /staging/ada_home | sudo tar -xvp --same-owner -f -

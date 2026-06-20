@@ -1,0 +1,29 @@
+The procedure to restore the gitlab data from the backups:
+
+# scp gitlab-ihub:/var/opt/gitlab/backups/1755043224_2025_08_13_17.8.1-ee_gitlab_backup.tar /var/opt/gitlab/backups/
+
+# chown git:git /var/opt/gitlab/backups/1755043224_2025_08_13_17.8.1-ee_gitlab_backup.tar
+
+# gitlab-ctl stop puma
+
+# gitlab-ctl stop sidekiq
+
+# gitlab-ctl status
+
+# gitlab-backup restore BACKUP=1755043224_2025_08_13_17.8.1-ee
+
+# gitlab-ctl reconfigure
+
+# gitlab-ctl start
+
+# gitlab-rake gitlab:check SANITIZE=true
+
+# gitlab-rake gitlab:doctor:secrets
+
+# gitlab-rake gitlab:artifacts:check
+
+# gitlab-rake gitlab:lfs:check
+
+# gitlab-rake gitlab:uploads:check
+
+# gitlab-rails dbconsole --database main
